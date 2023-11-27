@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Můj Blog</title>
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+        }
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .nav-item {
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 5px 10px;
+            text-transform: uppercase;
+        }
+        .nav-item:hover {
+            color: #007bff;
+        }
+        .main {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .post {
+            margin-bottom: 20px;
+        }
+        h2, h3 {
+            margin-bottom: 10px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <ul>
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#">About</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <main class="main">
+            <div id="searchBar">
+                <input type="text" id="searchInput" onkeyup="search()" placeholder="🔍 Hledat články...">
+            </div>
+
+            <div id="blogPosts">
+                <!-- Příklad článku -->
+                <div class="post">
+                    <h2 class="title">Nadpis článku</h2>
+                    <p class="description"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Duis pulvinar. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean id metus id velit ullamcorper pulvinar. Morbi imperdiet, mauris ac auctor dictum, nisl ligula egestas nulla, et sollicitudin sem purus in lacus. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Duis risus. Donec vitae arcu. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam. Duis risus. Pellentesque ipsum. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. Aliquam ornare wisi eu metus. In sem justo, commodo ut, suscipit at, pharetra vitae, orci.</p>
+                    <a href="link.html">Číst více</a>
+                </div>
+                <hr>
+                <div class="post">
+                    <!-- Příklad článku -->
+                    <div class="post">
+                        <h2 class="title">Nadpis článku</h2>
+                        <p class="description">Popisek článku</p>
+                        <a href="link.html">Číst více</a>
+                    </div>
+                    <!-- Další články... -->
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Vytvořil: User</p>
+        </footer>
+    </div>
+
+    <script>
+        function search() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toUpperCase();
+            var posts = document.getElementsByClassName('post');
+
+            for (var i = 0; i < posts.length; i++) {
+                var title = posts[i].getElementsByClassName('title')[0];
+                if (title) {
+                    var textValue = title.textContent || title.innerText;
+                    if (textValue.toUpperCase().indexOf(filter) > -1) {
+                        posts[i].style.display = "";
+                    } else {
+                        posts[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

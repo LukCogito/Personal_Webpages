@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanály a obsah</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Ubuntu, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Purisa;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            padding: 8px;
+            text-align: center;
+            word-wrap: break-word;
+            transition: transform .2s;
+        }
+
+        td:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            border-radius: 50%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content {
+            flex-grow: 1; /* Flex-grow zajistí, aby obsah vždy zabíral veškerou dostupnou výšku */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8vw;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            footer {
+                font-size: 0.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Kanály a obsah</h1>
+
+        <table>
+            <tr>
+                <td><a target="_blank" href="https://odysee.com/@Kan%C3%A1l_Svobodn%C3%A9ho_p%C5%99%C3%ADstavu:a?view=content"><img src="https://thumbnails.odycdn.com/optimize/s:200:0/quality:95/plain/https://thumbnails.lbry.com/UCvl8a57ja-P4aTGV_O6Q21Q" alt="Kanál Svobodného přístavu" width="100"><br>Kanál Svobodného přístavu</a></td>
+                
+                    <td><a target="_blank" href="https://yt.artemislena.eu/channel/UCSbovUZ7ZzPiUoxy-ewBEhw"><img src="https://yt3.googleusercontent.com/ytc/AOPolaRiLKnO2V3-HCI4MeLFGd2zUfQOA09fYdNC0cWX=s176-c-k-c0x00ffffff-no-rj" alt=" Zrzka a Matfyzák" width="100"><br> Zrzka a Matfyzák</a></td>
+
+                    <td><a target="_blank" href="https://yt.artemislena.eu/channel/UCS-WzPVpAAli-1IfEG2lN8A"><img src="https://yt3.googleusercontent.com/D96W3q_Gg1bvcqBT_631-tMYM2NB0RhjHAtPTTJcN9e4EYE_m9DlF8UM5jmaKO9wT6-38w7p-tM=s176-c-k-c0x00ffffff-no-rj" alt="Michael MJD" width="100"><br>Michael MJD</a></td>
+
+                    <td><a target="_blank" href="https://yt.artemislena.eu/channel/UCshVweYiHqrepiq6b8tWvLQ"><img src="https://yt3.googleusercontent.com/ytc/AOPolaSwNesa-LBk1jHwz5W3yfeNiNTfHjtq9vQK6sPY=s176-c-k-c0x00ffffff-no-rj" alt=" Janus Cycle" width="100"><br> Janus Cycle</a></td>
+
+                    <td><a target="_blank" href="https://odysee.com/@AlphaNerd:8?view=content"><img src="https://thumbnails.odycdn.com/optimize/s:200:0/quality:95/plain/https://thumbnails.lbry.com/UC7YOGHUfC1Tb6E4pudI9STA" alt="Mental Outlaw" width="100"><br>Mental Outlaw</a></td>
+
+                    <td><a target="_blank" href="https://yt.artemislena.eu/channel/UCKGe7fZ_S788Jaspxg-_5Sg"><img src="https://yt3.googleusercontent.com/ytc/AOPolaSs0URYeCswtvWTiZQfVP_AWZeHE7pMzC2U-L1a6A=s176-c-k-c0x00ffffff-no-rj" alt="The PC Security Channel" width="100"><br>The PC Security Channel</a></td>
+
+                    <td><a target="_blank" href="https://odysee.com/@RobBraxmanTech:6?view=content"><img src="https://yt3.googleusercontent.com/G1i1ne1is-FtMAenStewhJvKhWjSbWeOovPZaPnIokOx0HPmx8-KFi5p6ehOpz3Vkbxx50vOpg=s176-c-k-c0x00ffffff-no-rj" alt=" Rob Braxman Tech" width="100"><br> Rob Braxman Tech</a></td>
+
+                    <td><a target="_blank" href="https://yt.artemislena.eu/channel/UC9-y-6csu5WGm29I7JiwpnA"><img src="https://yt3.googleusercontent.com/ytc/AOPolaT2LJqJ45k42V7j5jLk9c3hM4g1AzBI9XElQYXIGA=s176-c-k-c0x00ffffff-no-rj" alt=" Computerphile" width="100"><br>Computerphile</a></td>
+
+                    <td><a target="_blank" href="https://yt.artemislena.eu/channel/UCCvcd0FYi58LwyTQP9LITpA"><img src="https://yt3.googleusercontent.com/bdPsFjHRjoXQcrfqsIJHEw9GdLg9E35YEPkdwUj8t3lLZQmhrDDzYEm7LEPmrKuR4ecogb2g=s176-c-k-c0x00ffffff-no-rj" alt="Soft White Underbelly" width="100"><br>Soft White Underbelly</a></td>
+                
+            </tr>
+        </table>
+    </div>
+
+    <footer>Vytvořil: <a target="_blank" href="https://github.com/LukCogito">Luk Cogito</a></footer>
+</body>
+</html>

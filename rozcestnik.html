@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rozcestník</title>
+<style>
+
+body {
+    font-family: Purisa, sans-serif;
+    text-align: center;
+    margin: 0;
+    height: 100vh;  
+    display: flex;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: purple;
+}
+
+h1 {
+    font-size: 2.5vw;
+    position: fixed;
+    top: 1.0vh;
+
+}
+
+h2 {
+    font-size: 1.5vw;
+}
+
+footer {
+    position: fixed;
+    bottom: 0.5vw;
+    width: 100%;
+    font-size: 0.8vw;
+}
+
+p {
+    font-size: 1.2vw;
+    font-family: Ubuntu;
+}
+
+em {
+    font-size: 2.0vw;
+}
+
+button {
+    font-size: 2.0vw;
+}
+
+#left {
+  flex: 1;
+  background: url('/home/luk_cogito/Dokumenty/webovky/okraj_left.png') left center / auto 100% no-repeat;
+}
+
+#right {
+  flex: 1;
+  background: url('/home/luk_cogito/Dokumenty/webovky/okraj_right.png') right center / auto 100% no-repeat;
+}
+
+#content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#randomImage {
+    position: absolute;
+    transition: all 5s ease-in-out; /* Změna rychlosti pohybu na 5 sekund */
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="https://www.jellygummies.com/gifs">
+    <img id="randomImage" src="" />
+</a>
+
+<script>
+    var images = ["https://images.squarespace-cdn.com/content/v1/581499b8e58c627afce6221c/1581518467240-NM0E7UFDFYIXRM7WW4OS/blob-1.gif?format=300w", "https://images.squarespace-cdn.com/content/v1/581499b8e58c627afce6221c/1581507116526-2AJOWPT3GLJ05OUXN6T7/cat-1.gif?format=300w", "https://images.squarespace-cdn.com/content/v1/581499b8e58c627afce6221c/1581464973118-CB1RU9XLLHAB1X62IRHP/oiu98.gif?format=300w"]; // Obrázky k výběru
+    var animationInterval;
+    var newImage = randomImage();
+
+    function randomPosition() {
+        var h = window.innerHeight - 50;
+        var w = window.innerWidth - 50;
+        var nh = Math.floor(Math.random() * h);
+        var nw = Math.floor(Math.random() * w);
+        return [nh,nw];    
+    }
+
+    function randomSize() {
+        var minSize = 50; // Minimální velikost v px
+        var maxSize = 200; // Maximální velikost v px
+        var size = Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize;
+        return size;
+    }
+
+    function randomImage() {
+        return images[Math.floor(Math.random() * images.length)];
+    }
+
+    function startAnimation() {
+        document.getElementById('randomImage').src = newImage;
+        animationInterval = setInterval(function(){
+            var newSize = randomSize();
+            var newPosition = randomPosition();
+            document.getElementById('randomImage').style.top = newPosition[0]+'px';
+            document.getElementById('randomImage').style.left = newPosition[1]+'px';
+            document.getElementById('randomImage').style.width = newSize+'px';
+        }, 5000); // Interval změny pozice a velikosti v ms
+    }
+
+    function stopAnimation() {
+        clearInterval(animationInterval);
+        document.getElementById('randomImage').src = "";
+    }
+
+    function toggleAnimation() {
+        var button = document.getElementById('toggleButton');
+        if (button.innerHTML == "☮") {
+            stopAnimation();
+            button.innerHTML = "👾";
+        } else {
+            newImage = randomImage();
+            startAnimation();
+            button.innerHTML = "☮";
+        }
+    }
+</script>
+
+<div id="left"></div>
+<div id="content">
+
+    <h1>Rozcestník <em>„do různých cest vedoucí“</em></h1>
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.thenounproject.com%2Fpng%2F182485-200.png&f=1&nofb=1&ipt=48911ef939b4986914a57eb63f3396bceed8141f6a7b1d1de87ed8d08f2e187c&ipo=images" alt="Rozcestí">
+    <h2>Vítej, pokračuj dále na:</h2>
+    <p><a href="webblog.html" title="Webový blog Luka Cogito obsahující články různých předmětů a zaměření.">Shluk idejí</a></p>
+    <p><a href="https://soundcloud.com/krimilon" title="Soundcloud Luka Cogita, kde vystupuje pod psyudonymem Krimolon. Poslechnětě si psychedelickou ambientní hudubu nebo elektronickou hudbu.">Krimolonovu hudbu</a></p>
+    <p><a href="https://soundcloud.com/krimilon" title="Kanál na odysee s vizualizacemi Krimolonovy hudby.">Krimolonvy halucinace</a></p>
+    <p><a href="kanaly.html" title="Kanály na odysee a Invidious, které Luk Cogito doporučuje ke sledování. Od Urzy, přes osobní rozvoj, až po IT obsah.">Doporučený video-obsah</a></p>
+    <p><a href="odkaz3.html" title="Generátor obrázků pro všechny kluky a holky z kouzelný školky.">Dej mi bizarní obrázek a nech mě!</a></p>
+
+    <button id="toggleButton" onclick="toggleAnimation()">👾</button>
+
+    <footer>Vytvořil: Luk Cogito</footer>
+
+</div>
+<div id="right"></div>
+
+
+
+</body>
+</html>
